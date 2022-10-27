@@ -1,0 +1,83 @@
+{
+  "name": "linkedin-react",
+  "version": "0.0.1",
+  "private": false,
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "lint-staged": "^9.0.1",
+    "react-scripts": "^3.0.1",
+    "redux-mock-store": "^1.5.3",
+    "standard": "^14.3.0"
+  },
+  "dependencies": {
+    "antd": "^3.19.2",
+    "connected-react-router": "^6.4.0",
+    "history": "^4.9.0",
+    "immer": "^9.0.6",
+    "kitsu": "^8.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/standard --fix",
+      "git add"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch",
+      "describe",
+      "expect",
+      "it",
+      "jest",
+      "afterEach",
+      "beforeEach",
+      "localStorage"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/reducers/**/index.js",
+      "src/actions/**/*.js",
+      "src/reducers/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
