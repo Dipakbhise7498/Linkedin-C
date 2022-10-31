@@ -8,6 +8,7 @@ import Logo from '../../assets/images/logo.png'
 class IndexPage extends Component {
   render () {
     return (
+      <>
       <Col span={24} style={{ backgroundColor: '#fff' }}>
         <Layout.Header style={{
           display: 'flex',
@@ -72,6 +73,7 @@ class IndexPage extends Component {
           </Col>
         </Row>
       </Col>
+      </>
     )
   }
 }
